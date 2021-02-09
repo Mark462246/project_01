@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item lines="none">
+            <ion-title>
+              List Organizations
+            </ion-title>
+          </ion-item>
+        </ion-col>
+        <!-- <ion-col>
+          <ion-item lines="none">
+            <ion-icon slot="end" name="sunny"></ion-icon>
+            <ion-toggle slot="end" [ngModel]="themeService.getDarkMode()" (ionChange)="ionicToggleTheme()">
+            </ion-toggle>
+            <ion-icon slot="end" name="moon"></ion-icon>
+          </ion-item>
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [id]="themeService.getIsDarkTheme() ? 'dark' : 'light' " [ngClass]="{'theme-dark': themeService.getIsDarkTheme()}"  >
+  <mat-grid-list cols="4" rowHeight="250px" [gutterSize]="'50px'">
+    <mat-grid-tile (click)="navigate()">
+      <mat-card id="add-button">
+            <mat-card-header  >
+              <mat-card-title >
+                <mat-icon>add</mat-icon>
+                Add
+              </mat-card-title>
+            </mat-card-header>
+          </mat-card>
+        </mat-grid-tile>
+    <mat-grid-tile *ngFor="let org of orgService.organizations">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{org.name}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content></mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</ion-content>

@@ -1,0 +1,39 @@
+mat-grid-list {
+  margin: 50px;
+
+  mat-card-tile{
+    height: 230px;
+    width: 300px;
+  }
+  mat-card {
+    height: 230px;
+    width: 300px;
+
+    mat-card-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      mat-card-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+      }
+    }
+   }
+}
+
+#add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+#dark{
+  --ion-background-color: #303030; 
+}
+#light {
+  --ion-background-color: #fafafa;
+}
